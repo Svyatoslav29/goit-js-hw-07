@@ -9,6 +9,24 @@ const ingredients = [
     'Приправы',
 ]
 
+const totalIngr = ingredients.map(item => {
+    const list = document.createElement('li')
+    list.innerHTML = `<p>${item}</p>`;
+    console.log(list);
+    return list;
+})
+
+const ingredientsRef = document.querySelector('#ingredients');
+
+ingredientsRef.append(...totalIngr);
+
+
+
+
+
+
+
+
 // const docFrag = document.createDocumentFragment()
 
 // ingredients.forEach(item => {
@@ -18,13 +36,3 @@ const ingredients = [
 // })
 
 // document.querySelector('ul#ingredients').appendChild(docFrag)
-
-let totalIngrHTML = ""
-
-ingredients.forEach(item => {
-    const li = document.createElement('li')
-    li.innerText = item
-    totalIngrHTML += li.outerHTML
-})
-
-document.querySelector('ul#ingredients').innerHTML = totalIngrHTML

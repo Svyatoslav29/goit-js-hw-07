@@ -16,16 +16,16 @@ render.addEventListener("click", getAmount);
 destroy.addEventListener("click", destroyBoxes);
 
 function getAmount() {
-  var amount = +document.querySelector("#controls input").value;
+  let amount = +document.querySelector("#controls input").value;
   createBoxes(amount);
 }
 
 function createBoxes(amount) {
-  var basicSize = 30;
-  var fragment = document.createDocumentFragment();
+  let basicSize = 30;
+  let fragment = document.createDocumentFragment();
   for (var i = 0; i < amount; i++) {
-    var size = basicSize + i * 10;
-    var div = document.createElement("div");
+    let size = basicSize + i * 10;
+    let div = document.createElement("div");
     div.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
     fragment.appendChild(div);
   }
